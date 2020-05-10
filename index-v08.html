@@ -5,7 +5,8 @@
 <head>
     <meta charset="utf-8">
     <title>Binary Puzzle 6x6</title>
-        <style type="text/css"> /* CSS in the same file initially because it's minimal */
+    <style type="text/css">
+        /* CSS in the same file initially because it's minimal */
         /* 30/7/19 Rain Holloway - to eliminate double lines */
         * {
             padding: 0;
@@ -89,11 +90,11 @@
     <!--3/8/19 "LoadGrid()" now changed to 2 nested loops -->
     <form id="input">
         <h1>6x6 Binary Puzzle Game</h1>
-        <h2>V7: Creation of a 2 dimensional array for easier row &amp; column reference. </h2>
+        <h2>V8: Adding functions and buttons</h2>
         <p>Return to <a href="index.html">home</a>:</p>
- 
+
         <select id="cboPuzNo" onchange="LoadGrid(eval(value))">
-        <!--<select id="cboPuzNo">-->
+            <!--<select id="cboPuzNo">-->
             <option value="GT">Test 1-36</option>
             <option value='G01'>Example in Q</option>
             <option value="G02">Game 2</option>
@@ -111,6 +112,15 @@
         </select>
 
         <!--  3/8/19 Board cell labels have "B" for board, then column digit, then row digit"  -->
+        <br />
+        <input type="button" value="--- Solve repeat ---" onclick="BinaryPuzzleSolver()" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+        <input type="button" value="--- Solve once ---" onclick="SolvePuzzle()" />&nbsp;&nbsp;<br />
+        <input type="button" value="Pairs" onclick="SolveNumberPairs()" />&nbsp;
+        <input type="button" value="RowPairs" onclick="SolveRowPairs()" />&nbsp;
+        <input type="button" value="ColPairs" onclick="SolveColPairs()" />&nbsp;
+        <input type="button" value="Trios" onclick="SolveNumberTrios()" />&nbsp;
+        <input type="button" value="Complete" onclick="CompleteRowsCols()" /><br />
+        
         <table class="gameboard">
             <tr>
                 <td>
